@@ -45,7 +45,7 @@
 // The maximum number of dimensions the firmware should be able to support
 // Possible values lie between 1, and 4, inclusive
 #ifndef ULAB_MAX_DIMS
-#define ULAB_MAX_DIMS                       2
+#define ULAB_MAX_DIMS                       4
 #endif
 
 // By setting this constant to 1, iteration over array dimensions will be implemented

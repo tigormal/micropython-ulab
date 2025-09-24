@@ -1179,6 +1179,9 @@ mp_obj_t ndarray_inplace_modulo(ndarray_obj_t *lhs, ndarray_obj_t *rhs, int32_t 
     if((lhs->dtype != NDARRAY_FLOAT) && (rhs->dtype == NDARRAY_FLOAT)) {
         mp_raise_TypeError(MP_ERROR_TEXT("results cannot be cast to specified type"));
     }
+    uint8_t *larray = (uint8_t *)lhs->array;
+    uint8_t *rarray = (uint8_t *)rhs->array;
+
     if(lhs->dtype == NDARRAY_FLOAT) {
         if(rhs->dtype == NDARRAY_UINT8) {
             INLINE_MODULO_FLOAT_LOOP(lhs, uint8_t, larray, rarray, rstrides);
